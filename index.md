@@ -1,0 +1,69 @@
+## Exported tools
+
+Upon activation, koopa makes scripts available in `$PATH`, which are defined in the [`bin/`](bin/) directory of the repo. Run `koopa list` for a complete list.
+
+## Automatic program configuration
+
+Koopa provides automatic configuration and `$PATH` variable support for a number
+of popular bioinformatics tools. When configuring manually, ensure that
+variables are defined before sourcing the activation script.
+
+### Aspera Connect
+
+[Aspera Connect][] is a secure file transfer application commonly used by
+numerous organizations, including the NIH and Broad Institute. Koopa will
+automatically detect Aspera when it is installed at the default path of
+`~/.aspera/`. Otherwise, the installation path can be defined manually using
+the `$ASPERA_EXE` variable.
+
+```bash
+export ASPERA_EXE="${HOME}/.aspera/connect/bin/asperaconnect"
+```
+
+### bcbio
+
+[bcbio][] is a [Python][] toolkit that provides modern NGS analysis pipelines
+for RNA-seq, single-cell RNA-seq, ChIP-seq, and variant calling. Koopa provides
+automatic configuration support for the Harvard O2 and Odyssey high-performance
+computing clusters. Otherwise, the installation path can be defined manually
+using the `$BCBIO_EXE` variable.
+
+```bash
+export BCBIO_EXE="/usr/local/bin/bcbio_nextgen.py"
+```
+
+### conda
+
+[Conda][] is an open source package management system that provides pre-built
+binaries using versioned recipes for Linux and macOS.
+
+Koopa provides automatic detection and activation support when conda is
+installed at any of these locations (note priority):
+
+- `~/anaconda3/`
+- `~/miniconda3/`
+- `/usr/local/anaconda3/`
+- `/usr/local/miniconda3/`
+
+Oherwise, the installation path can be defined manually using the `$CONDA_EXE` variable.
+
+```bash
+export CONDA_EXE="${HOME}/miniconda3/bin/conda"
+```
+
+### SSH key
+
+On Linux, koopa will launch `ssh-agent` and attempt to import the default [SSH][] key at `~/.ssh/id_rsa`, if the key file exists. A different default key can be defined manually using the `$SSH_KEY` variable.
+
+```bash
+export SSH_KEY="${HOME}/.ssh/id_rsa"
+```
+
+On macOS, instead we recommend adding these lines to `~/.ssh/config` to use the system keychain:
+
+```
+Host *
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_rsa
+    UseKeychain yes
+```
