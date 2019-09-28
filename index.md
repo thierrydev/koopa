@@ -67,3 +67,13 @@ Host *
     IdentityFile ~/.ssh/id_rsa
     UseKeychain yes
 ```
+
+[aspera connect]: https://downloads.asperasoft.com/connect2/
+[bcbio]: https://bcbio-nextgen.readthedocs.io/
+[conda]: https://conda.io/
+[dotfiles]: https://github.com/mjsteinbaugh/dotfiles/
+[git]: https://git-scm.com/
+[pgp]: https://www.openpgp.org/
+[python]: https://www.python.org/
+[r]: https://www.r-project.org/
+[ssh]: https://en.wikipedia.org/wiki/Secure_Shell
