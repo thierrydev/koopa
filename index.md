@@ -1,4 +1,9 @@
-## Requirements
+---
+title: koopa
+layout: default
+---
+
+# Requirements
 
 - Linux or macOS.
 - [POSIX][]-compliant shell: [bash][] or [zsh][].
@@ -18,10 +23,9 @@ Tested on:
 - RHEL 7 / CentOS 7
 - Amazon Linux 2
 
+# Installation
 
-## Installation
-
-### Single user
+## Single user
 
 Install into `~/.local/share/koopa`. This follows the recommended [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
@@ -46,7 +50,7 @@ on the operating system, so refer to your shell documentation for details.
 - [bash][]: `.bash_profile`, `.bashrc`.
 - [zsh][]: `.zshrc`, `.zprofile`.
 
-### Shared for all users
+## Shared (for all users)
 
 Install into `/usr/local/koopa`. This requires sudo (i.e. administrator) permissions.
 
@@ -58,24 +62,24 @@ This will add a shared profile configuration file at `/etc/profile.d/koopa.sh` f
 
 If you're going to install any programs using the cellar scripts, also ensure the permissions for `/usr/local/` are group writable. The installer attempts to fix this automatically, if necessary.
 
-### Check installation
+## Check installation
 
 Restart the shell. Koopa should now activate automatically at login. You can
 verify this with `command -v koopa`. Next, check your environment dependencies
 with `koopa check`. To obtain information about the working environment, run
 `koopa info`.
 
-## Exported tools
+# Exported tools
 
 Upon activation, koopa makes scripts available in `$PATH`, which are defined in the [`bin/`](bin/) directory of the repo. Run `koopa list` for a complete list.
 
-## Automatic program configuration
+# Automatic program configuration
 
 Koopa provides automatic configuration and `$PATH` variable support for a number
 of popular bioinformatics tools. When configuring manually, ensure that
 variables are defined before sourcing the activation script.
 
-### Aspera Connect
+## Aspera Connect
 
 [Aspera Connect][] is a secure file transfer application commonly used by
 numerous organizations, including the NIH and Broad Institute. Koopa will
@@ -87,7 +91,7 @@ the `$ASPERA_EXE` variable.
 export ASPERA_EXE="${HOME}/.aspera/connect/bin/asperaconnect"
 ```
 
-### bcbio
+## bcbio
 
 [bcbio][] is a [Python][] toolkit that provides modern NGS analysis pipelines
 for RNA-seq, single-cell RNA-seq, ChIP-seq, and variant calling. Koopa provides
@@ -99,7 +103,7 @@ using the `$BCBIO_EXE` variable.
 export BCBIO_EXE="/usr/local/bin/bcbio_nextgen.py"
 ```
 
-### conda
+## conda
 
 [Conda][] is an open source package management system that provides pre-built
 binaries using versioned recipes for Linux and macOS.
@@ -118,7 +122,7 @@ Oherwise, the installation path can be defined manually using the `$CONDA_EXE` v
 export CONDA_EXE="${HOME}/miniconda3/bin/conda"
 ```
 
-### SSH key
+## SSH key
 
 On Linux, koopa will launch `ssh-agent` and attempt to import the default [SSH][] key at `~/.ssh/id_rsa`, if the key file exists. A different default key can be defined manually using the `$SSH_KEY` variable.
 
@@ -136,23 +140,21 @@ Host *
 ```
 
 [aspera connect]: https://downloads.asperasoft.com/connect2/
+[bash]: https://www.gnu.org/software/bash/  "Bourne Again SHell"
 [bcbio]: https://bcbio-nextgen.readthedocs.io/
 [conda]: https://conda.io/
-[dotfiles]: https://github.com/mjsteinbaugh/dotfiles/
-[git]: https://git-scm.com/
-[pgp]: https://www.openpgp.org/
-[python]: https://www.python.org/
-[r]: https://www.r-project.org/
-[ssh]: https://en.wikipedia.org/wiki/Secure_Shell
-
-
-[bash]: https://www.gnu.org/software/bash/  "Bourne Again SHell"
 [dash]: https://wiki.archlinux.org/index.php/Dash  "Debian Almquist SHell"
+[dotfiles]: https://github.com/mjsteinbaugh/dotfiles/
 [fish]: https://fishshell.com/  "Friendly Interactive SHell"
+[git]: https://git-scm.com/
 [koopa]: https://koopa.acidgenomics.com/
 [ksh]: http://www.kornshell.com/  "KornSHell"
+[pgp]: https://www.openpgp.org/
 [posix]: https://en.wikipedia.org/wiki/POSIX  "Portable Operating System Interface"
 [python]: https://www.python.org/
+[python]: https://www.python.org/
 [r]: https://www.r-project.org/
+[r]: https://www.r-project.org/
+[ssh]: https://en.wikipedia.org/wiki/Secure_Shell
 [tcsh]: https://en.wikipedia.org/wiki/Tcsh  "TENEX C Shell"
 [zsh]: https://www.zsh.org/  "Z SHell"
