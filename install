@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 install="https://raw.githubusercontent.com/acidgenomics/koopa/master/install"
-curl -sSL "$install" | bash
+curl -sSL "$install" | bash -s -- "$@"
