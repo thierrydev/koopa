@@ -1,0 +1,27 @@
+{%- assign title = page.title | markdownify | strip_html | strip_newlines -%}
+{%- assign h1 = page.title | markdownify | remove: "<p>" | remove: "</p>" | strip_newlines -%}
+<!DOCTYPE html>
+<html lang="en" id="front">
+<head>
+<title>{{ title }}</title>
+<link rel="stylesheet" type="text/css" href="/css/default.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+</head>
+
+<body>
+<header>
+<pre>
+               __
+    .,-;-;-,. /'_\
+  _/_/_/_|_\_\) /
+'-<_><_><_><_>=/\
+  `/_/====/_/-'\_\
+   ""     ""    ""
+</pre>
+<h1>{{ h1 }}</h1>
+<div>Shell bootloader for bioinformatics.</div>
+</header>
+{{ content }}
+</body>
+</html>
