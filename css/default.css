@@ -1,1 +1,11 @@
 @import url("https://steinbaugh.com/css/default.css");
+
+html#front body>header {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+html#front body>header pre {
+    font-size: 0.75rem;
+}

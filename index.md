@@ -1,6 +1,6 @@
 ---
 title: koopa
-layout: default
+layout: front
 ---
 
 # Requirements
