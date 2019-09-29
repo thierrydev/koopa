@@ -30,7 +30,7 @@ Tested on:
 Install into `~/.local/share/koopa`. This follows the recommended [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
 ```sh
-curl -sSL "https://raw.githubusercontent.com/acidgenomics/koopa/master/install" | bash
+curl -sSL "https://koopa.acidgenomics.com/install" | bash
 ```
 
 Add these lines to your shell configuration file:
@@ -43,9 +43,7 @@ XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config"
 . "${XDG_CONFIG_HOME}/koopa/activate"
 ```
 
-Not sure where to source `activate` in your configuration? Here are some general
-recommendations, in order of priority for each shell. These can differ depending
-on the operating system, so refer to your shell documentation for details.
+Not sure where to source `activate` in your configuration? Here are some general recommendations, in order of priority for each shell. These can differ depending on the operating system, so refer to your shell documentation for details.
 
 - [bash][]: `.bash_profile`, `.bashrc`.
 - [zsh][]: `.zshrc`, `.zprofile`.
@@ -55,7 +53,7 @@ on the operating system, so refer to your shell documentation for details.
 Install into `/usr/local/koopa`. This requires sudo (i.e. administrator) permissions.
 
 ```sh
-curl -sSL "https://raw.githubusercontent.com/acidgenomics/koopa/master/install" | bash -s -- --shared
+curl -sSL "https://koopa.acidgenomics.com/install" | bash -s -- --shared
 ```
 
 This will add a shared profile configuration file at `/etc/profile.d/koopa.sh` for supported Linux distros, but not macOS.
@@ -64,10 +62,7 @@ If you're going to install any programs using the cellar scripts, also ensure th
 
 ## Check installation
 
-Restart the shell. Koopa should now activate automatically at login. You can
-verify this with `command -v koopa`. Next, check your environment dependencies
-with `koopa check`. To obtain information about the working environment, run
-`koopa info`.
+Restart the shell. Koopa should now activate automatically at login. You can verify this with `command -v koopa`. Next, check your environment dependencies with `koopa check`. To obtain information about the working environment, run `koopa info`.
 
 # Exported tools
 
@@ -75,41 +70,29 @@ Upon activation, koopa makes scripts available in `$PATH`, which are defined in 
 
 # Automatic program configuration
 
-Koopa provides automatic configuration and `$PATH` variable support for a number
-of popular bioinformatics tools. When configuring manually, ensure that
-variables are defined before sourcing the activation script.
+Koopa provides automatic configuration and `$PATH` variable support for a number of popular bioinformatics tools. When configuring manually, ensure that variables are defined before sourcing the activation script.
 
 ## Aspera Connect
 
-[Aspera Connect][] is a secure file transfer application commonly used by
-numerous organizations, including the NIH and Broad Institute. Koopa will
-automatically detect Aspera when it is installed at the default path of
-`~/.aspera/`. Otherwise, the installation path can be defined manually using
-the `$ASPERA_EXE` variable.
+[Aspera Connect][] is a secure file transfer application commonly used by numerous organizations, including the NIH and Broad Institute. Koopa will automatically detect Aspera when it is installed at the default path of `~/.aspera/`. Otherwise, the installation path can be defined manually using the `$ASPERA_EXE` variable.
 
-```bash
+```sh
 export ASPERA_EXE="${HOME}/.aspera/connect/bin/asperaconnect"
 ```
 
 ## bcbio
 
-[bcbio][] is a [Python][] toolkit that provides modern NGS analysis pipelines
-for RNA-seq, single-cell RNA-seq, ChIP-seq, and variant calling. Koopa provides
-automatic configuration support for the Harvard O2 and Odyssey high-performance
-computing clusters. Otherwise, the installation path can be defined manually
-using the `$BCBIO_EXE` variable.
+[bcbio][] is a [Python][] toolkit that provides modern NGS analysis pipelines for RNA-seq, single-cell RNA-seq, ChIP-seq, and variant calling. Koopa provides automatic configuration support for the Harvard O2 and Odyssey high-performance computing clusters. Otherwise, the installation path can be defined manually using the `$BCBIO_EXE` variable.
 
-```bash
+```sh
 export BCBIO_EXE="/usr/local/bin/bcbio_nextgen.py"
 ```
 
 ## conda
 
-[Conda][] is an open source package management system that provides pre-built
-binaries using versioned recipes for Linux and macOS.
+[Conda][] is an open source package management system that provides pre-built binaries using versioned recipes for Linux and macOS.
 
-Koopa provides automatic detection and activation support when conda is
-installed at any of these locations (note priority):
+Koopa provides automatic detection and activation support when conda is installed at any of these locations (note priority):
 
 - `~/anaconda3/`
 - `~/miniconda3/`
@@ -118,7 +101,7 @@ installed at any of these locations (note priority):
 
 Oherwise, the installation path can be defined manually using the `$CONDA_EXE` variable.
 
-```bash
+```sh
 export CONDA_EXE="${HOME}/miniconda3/bin/conda"
 ```
 
@@ -126,7 +109,7 @@ export CONDA_EXE="${HOME}/miniconda3/bin/conda"
 
 On Linux, koopa will launch `ssh-agent` and attempt to import the default [SSH][] key at `~/.ssh/id_rsa`, if the key file exists. A different default key can be defined manually using the `$SSH_KEY` variable.
 
-```bash
+```sh
 export SSH_KEY="${HOME}/.ssh/id_rsa"
 ```
 
