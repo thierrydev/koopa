@@ -27,13 +27,13 @@ Tested on:
 
 ## Single user
 
-Install into `~/.local/share/koopa`. This follows the recommended [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
-
 ```sh
 curl -sSL "https://koopa.acidgenomics.com/install" | bash
 ```
 
-Add these lines to your shell configuration file:
+Installs into `~/.local/share/koopa`, following the recommended [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
+
+Next, add these lines to your shell configuration file:
 
 ```sh
 # koopa shell
@@ -50,15 +50,13 @@ Not sure where to source `activate` in your configuration? Here are some general
 
 ## Shared (for all users)
 
-Install into `/usr/local/koopa`. This requires sudo (i.e. administrator) permissions.
+Requires sudo (i.e. administrator) permissions.
 
 ```sh
 curl -sSL "https://koopa.acidgenomics.com/install" | bash -s -- --shared
 ```
 
-This will add a shared profile configuration file at `/etc/profile.d/koopa.sh` for supported Linux distros, but not macOS.
-
-If you're going to install any programs using the cellar scripts, also ensure the permissions for `/usr/local/` are group writable. The installer attempts to fix this automatically, if necessary.
+Installs into `/usr/local/koopa`. This will also add a shared profile configuration file at `/etc/profile.d/koopa.sh` for supported Linux distros, but not macOS. If you're going to install any programs using the cellar scripts, also ensure the permissions for `/usr/local/` are group writable. The installer attempts to fix this automatically, if necessary.
 
 ## Check installation
 
