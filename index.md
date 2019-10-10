@@ -5,14 +5,14 @@ layout: front
 
 # Requirements
 
-- Linux or macOS.
-- [POSIX][]-compliant shell: [bash][] or [zsh][].
+- [POSIX][]-compliant shell: [bash][] or [zsh][]
+- Linux or macOS
 
 Dependencies:
 
-- [Bash][] >= 4.
-- [Python][] >= 3.7.
-- [R][] >= 3.6.
+- [Bash][] >= 4
+- [Python][] >= 3.7
+- [R][] >= 3.6
 
 Tested on:
 
