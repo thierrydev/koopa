@@ -3,6 +3,8 @@ title: koopa
 layout: front
 ---
 
+![Screenshot](images/screenshot.png)
+
 # Requirements
 
 - [POSIX][]-compliant shell: [bash][] or [zsh][]
