@@ -25,6 +25,7 @@ Tested on:
 - RHEL 8 / CentOS 8
 - RHEL 7 / CentOS 7
 - Amazon Linux 2
+- Raspbian
 
 # Installation
 
