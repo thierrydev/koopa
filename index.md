@@ -70,6 +70,8 @@ If you're going to install any programs using the cellar scripts, also ensure th
 
 Restart the shell. Koopa should now activate automatically at login. You can verify this with `command -v koopa`. Next, check your environment dependencies with `koopa check`. To obtain information about the working environment, run `koopa info`.
 
+<!--
+
 # Exported tools
 
 Upon activation, koopa makes scripts available in `$PATH`, which are defined in the [`bin/`](bin/) directory of the repo. Run `koopa list` for a complete list.
@@ -127,6 +129,8 @@ Host *
     IdentityFile ~/.ssh/id_rsa
     UseKeychain yes
 ```
+
+-->
 
 [aspera connect]: https://downloads.asperasoft.com/connect2/
 [bash]: https://www.gnu.org/software/bash/  "Bourne Again SHell"
