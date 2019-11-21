@@ -35,7 +35,7 @@ Tested on:
 curl -sSL "https://koopa.acidgenomics.com/install" | bash
 ```
 
-Installs into `~/.local/share/koopa`, following the recommended [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
+Installs into `~/.local/share/koopa/`, following the recommended [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
 Next, add these lines to your shell configuration file:
 
@@ -60,77 +60,15 @@ Requires sudo (i.e. administrator) permissions.
 curl -sSL "https://koopa.acidgenomics.com/install" | bash -s -- --shared
 ```
 
-Installs into `/usr/local/koopa`.
+Installs into `/usr/local/koopa/`.
 
-This will also add a shared profile configuration file into `/etc/profile.d` for supported Linux distros, but not macOS.
+This will also add a shared profile configuration file into `/etc/profile.d/` for supported Linux distros, but not macOS.
 
 If you're going to install any programs using the cellar scripts, also ensure the permissions for `/usr/local/` are group writable. The installer attempts to fix this automatically, if necessary.
 
 ## Check installation
 
 Restart the shell. Koopa should now activate automatically at login. You can verify this with `command -v koopa`. Next, check your environment dependencies with `koopa check`. To obtain information about the working environment, run `koopa info`.
-
-<!--
-
-# Exported tools
-
-Upon activation, koopa makes scripts available in `$PATH`, which are defined in the [`bin/`](bin/) directory of the repo. Run `koopa list` for a complete list.
-
-# Automatic program configuration
-
-Koopa provides automatic configuration and `$PATH` variable support for a number of popular bioinformatics tools. When configuring manually, ensure that variables are defined before sourcing the activation script.
-
-## Aspera Connect
-
-[Aspera Connect][] is a secure file transfer application commonly used by numerous organizations, including the NIH and Broad Institute. Koopa will automatically detect Aspera when it is installed at the default path of `~/.aspera/`. Otherwise, the installation path can be defined manually using the `$ASPERA_EXE` variable.
-
-```sh
-export ASPERA_EXE="${HOME}/.aspera/connect/bin/asperaconnect"
-```
-
-## bcbio
-
-[bcbio][] is a [Python][] toolkit that provides modern NGS analysis pipelines for RNA-seq, single-cell RNA-seq, ChIP-seq, and variant calling. Koopa provides automatic configuration support for the Harvard O2 and Odyssey high-performance computing clusters. Otherwise, the installation path can be defined manually using the `$BCBIO_EXE` variable.
-
-```sh
-export BCBIO_EXE="/usr/local/bin/bcbio_nextgen.py"
-```
-
-## conda
-
-[Conda][] is an open source package management system that provides pre-built binaries using versioned recipes for Linux and macOS.
-
-Koopa provides automatic detection and activation support when conda is installed at any of these locations (note priority):
-
-- `~/anaconda3/`
-- `~/miniconda3/`
-- `/usr/local/anaconda3/`
-- `/usr/local/miniconda3/`
-
-Oherwise, the installation path can be defined manually using the `$CONDA_EXE` variable.
-
-```sh
-export CONDA_EXE="${HOME}/miniconda3/bin/conda"
-```
-
-## SSH key
-
-On Linux, koopa will launch `ssh-agent` and attempt to import the default [SSH][] key at `~/.ssh/id_rsa`, if the key file exists. A different default key can be defined manually using the `$SSH_KEY` variable.
-
-```sh
-export SSH_KEY="${HOME}/.ssh/id_rsa"
-```
-
-On macOS, instead we recommend adding these lines to `~/.ssh/config` to use the system keychain:
-
-```
-Host *
-    AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_rsa
-    UseKeychain yes
-```
-
--->
 
 [aspera connect]: https://downloads.asperasoft.com/connect2/
 [bash]: https://www.gnu.org/software/bash/  "Bourne Again SHell"
