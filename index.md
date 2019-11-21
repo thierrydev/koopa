@@ -7,7 +7,7 @@ layout: front
 
 # Requirements
 
-- [POSIX][]-compliant shell: [bash][] or [zsh][]
+- [POSIX][]-compliant shell: [Bash][] or [Zsh][]
 - Linux or macOS
 
 Dependencies:
