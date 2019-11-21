@@ -62,7 +62,7 @@ curl -sSL "https://koopa.acidgenomics.com/install" | bash -s -- --shared
 
 Installs into `/usr/local/koopa`.
 
-This will also add a shared profile configuration file at `/etc/profile.d/koopa.sh` for supported Linux distros, but not macOS.
+This will also add a shared profile configuration file into `/etc/profile.d` for supported Linux distros, but not macOS.
 
 If you're going to install any programs using the cellar scripts, also ensure the permissions for `/usr/local/` are group writable. The installer attempts to fix this automatically, if necessary.
 
