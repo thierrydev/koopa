@@ -60,7 +60,7 @@ Requires sudo (i.e. administrator) permissions.
 curl -sSL "https://koopa.acidgenomics.com/install" | bash -s -- --shared
 ```
 
-Installs into `/n/app/koopa/`.
+Installs into `/usr/local/koopa/`.
 
 This will also add a shared profile configuration file into `/etc/profile.d/` for supported Linux distros, but not macOS.
 
