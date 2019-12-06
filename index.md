@@ -10,12 +10,6 @@ layout: front
 - [POSIX][]-compliant shell: [Bash][] or [Zsh][]
 - Linux or macOS
 
-Dependencies:
-
-- [Bash][] >= 4
-- [Python][] >= 3
-- [R][] >= 3.6
-
 Tested on:
 
 - macOS Mojave
@@ -26,6 +20,12 @@ Tested on:
 - Fedora 31
 - Amazon Linux 2
 - Raspbian
+
+Dependencies for exported scripts in `bin/`:
+
+- [Bash][] >= 4
+- [Python][] >= 3
+- [R][] >= 3.6
 
 # Installation
 
