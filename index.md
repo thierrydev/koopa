@@ -34,7 +34,7 @@ Requirements: bash, curl, git.
 ## Single user
 
 ```sh
-curl -sSL "https://koopa.acidgenomics.com/install" | bash
+curl -sSL https://koopa.acidgenomics.com/install | bash
 ```
 
 Installs into `~/.local/share/koopa/`, following the recommended [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
@@ -59,7 +59,7 @@ Not sure where to source `activate` in your configuration? Here are some general
 Requires sudo (i.e. administrator) permissions.
 
 ```sh
-curl -sSL "https://koopa.acidgenomics.com/install" | bash -s -- --shared
+curl -sSL https://koopa.acidgenomics.com/install | bash -s -- --shared
 ```
 
 Installs into `/usr/local/koopa/`.
