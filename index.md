@@ -29,6 +29,8 @@ Tested on:
 
 # Installation
 
+Requirements: bash, curl, git.
+
 ## Single user
 
 ```sh
