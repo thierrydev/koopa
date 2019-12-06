@@ -19,11 +19,11 @@ Dependencies:
 Tested on:
 
 - macOS Mojave
-- Debian 10 (Buster)
-- Fedora 31
 - Ubuntu 18 LTS (Bionic Beaver)
+- Debian 10 (Buster)
 - RHEL 8 / CentOS 8
 - RHEL 7 / CentOS 7
+- Fedora 31
 - Amazon Linux 2
 - Raspbian
 
