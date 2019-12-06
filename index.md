@@ -21,7 +21,7 @@ Tested on:
 - Amazon Linux 2
 - Raspbian
 
-Dependencies for exported scripts in `bin/`:
+Dependencies for executable scripts in `bin/`:
 
 - [Bash][] >= 4
 - [Python][] >= 3
