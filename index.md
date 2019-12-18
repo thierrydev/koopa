@@ -63,7 +63,8 @@ Not sure where to source `activate` in your configuration? Here are some general
 Requires sudo (i.e. administrator) permissions.
 
 ```sh
-curl -sSL https://koopa.acidgenomics.com/install | bash -s -- --shared
+curl -sSL https://koopa.acidgenomics.com/install \
+    | bash -s -- --shared
 ```
 
 Installs into `/usr/local/koopa/`.
