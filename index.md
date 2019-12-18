@@ -19,8 +19,9 @@ Tested on:
 - RHEL 7 / CentOS 7
 - Fedora 31
 - Amazon Linux 2
+- openSUSE Leap
+- Raspbian Buster
 - Kali
-- Raspbian
 - Arch
 - Alpine
 
