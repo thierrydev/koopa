@@ -12,14 +12,17 @@ layout: front
 
 Tested on:
 
-- macOS Mojave
+- macOS Catalina, Mojave
 - Ubuntu 18 LTS (Bionic Beaver)
 - Debian 10 (Buster)
 - RHEL 8 / CentOS 8
 - RHEL 7 / CentOS 7
 - Fedora 31
 - Amazon Linux 2
+- Kali
 - Raspbian
+- Arch
+- Alpine
 
 Dependencies for executable scripts in `bin/`:
 
