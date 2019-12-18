@@ -13,11 +13,11 @@ layout: front
 Tested on:
 
 - macOS Catalina, Mojave
-- Ubuntu 18 LTS (Bionic Beaver)
 - Debian 10 (Buster)
+- Ubuntu 18 LTS (Bionic Beaver)
+- Fedora 31
 - RHEL 8 / CentOS 8
 - RHEL 7 / CentOS 7
-- Fedora 31
 - Amazon Linux 2
 - openSUSE Leap
 - Raspbian Buster
