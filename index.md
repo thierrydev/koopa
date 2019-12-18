@@ -18,6 +18,7 @@ Tested on:
 - Fedora 31
 - RHEL 8 / CentOS 8
 - RHEL 7 / CentOS 7
+- RHEL 6 / CentOS 6
 - Amazon Linux 2
 - openSUSE Leap
 - Raspbian Buster
