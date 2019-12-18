@@ -13,12 +13,10 @@ layout: front
 Tested on:
 
 - macOS Catalina, Mojave
-- Debian 10 (Buster)
-- Ubuntu 18 LTS (Bionic Beaver)
+- Debian 10, 9, 8
+- Ubuntu 18.04, 16.04, 14.04
 - Fedora 31
-- RHEL 8 / CentOS 8
-- RHEL 7 / CentOS 7
-- RHEL 6 / CentOS 6
+- RHEL/CentOS 8, 7, 6
 - Amazon Linux 2
 - openSUSE Leap
 - Raspbian Buster
