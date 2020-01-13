@@ -68,6 +68,13 @@ curl -sSL https://koopa.acidgenomics.com/install \
 
 Installs into `/usr/local/koopa/`.
 
+For Ubuntu 18 LTS, ensure that default user configuration files are deleted:
+
+```sh
+sudo rm /etc/skel/.{bash_logout,bashrc,profile}
+rm ~/.{bash_logout,bashrc,profile}
+```
+
 This will also add a shared profile configuration file into `/etc/profile.d/` for supported Linux distros, but not macOS.
 
 If you're going to install any programs using the cellar scripts, also ensure the permissions for `/usr/local/` are group writable. The installer attempts to fix this automatically, if necessary.
