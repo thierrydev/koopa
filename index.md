@@ -5,6 +5,8 @@ layout: front
 
 ![Screenshot](images/screenshot.png)
 
+Source code is available on [GitHub](https://github.com/acidgenomics/koopa).
+
 # Requirements
 
 - [POSIX][]-compliant shell: [Bash][] or [Zsh][]
