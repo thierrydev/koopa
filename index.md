@@ -37,7 +37,7 @@ Dependencies for executable scripts in `bin/`:
 Requirements: bash, curl, git.
 
 ```sh
-curl -sSL https://koopa.acidgenomics.com/install | bash
+bash -c "$(curl -sSL https://koopa.acidgenomics.com/install)"
 ```
 
 Add these lines to your shell configuration file:
