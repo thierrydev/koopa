@@ -36,15 +36,11 @@ Dependencies for executable scripts in `bin/`:
 
 Requirements: bash, curl, git.
 
-## Single user
-
 ```sh
 curl -sSL https://koopa.acidgenomics.com/install | bash
 ```
 
-Installs into `~/.local/share/koopa/`, following the recommended [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
-
-Next, add these lines to your shell configuration file:
+Add these lines to your shell configuration file:
 
 ```sh
 # koopa shell
@@ -59,27 +55,6 @@ Not sure where to source `activate` in your configuration? Here are some general
 - [bash][]: `.bash_profile`, `.bashrc`.
 - [zsh][]: `.zshrc`, `.zprofile`.
 
-## Shared (for all users)
-
-Requires sudo (i.e. administrator) permissions.
-
-```sh
-curl -sSL https://koopa.acidgenomics.com/install \
-    | bash -s -- --shared
-```
-
-Installs into `/usr/local/koopa/`.
-
-This will also add a shared profile configuration file into `/etc/profile.d/` for supported Linux distros, but not macOS.
-
-If you're going to install any programs using the cellar scripts, also ensure the permissions for `/usr/local/` are group writable. The installer attempts to fix this automatically, if necessary.
-
-For Ubuntu 18 LTS, ensure that default user configuration files are deleted:
-
-```sh
-sudo rm /etc/skel/.{bash_logout,bashrc,profile}
-rm ~/.{bash_logout,bashrc,profile}
-```
 
 ## Check installation
 
