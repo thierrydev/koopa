@@ -40,7 +40,11 @@ Requirements: bash, curl, git.
 bash -c "$(curl -sSL https://koopa.acidgenomics.com/install)"
 ```
 
-Add these lines to your shell configuration file:
+The installer will prompt to determine whether you want a shared install for all users, or for the current local user only.
+
+## Update shell configuration (local user only)
+
+To activate koopa on login, add these lines to your shell configuration file:
 
 ```sh
 # koopa shell
