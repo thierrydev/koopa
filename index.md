@@ -44,6 +44,8 @@ The installer will prompt to determine whether you want a shared install for all
 
 ## Update shell configuration (local user only)
 
+Note that this step is not required for a shared installation on Linux, which writes a configuration file into `/etc/profile.d` instead.
+
 To activate koopa on login, add these lines to your shell configuration file:
 
 ```sh
@@ -61,7 +63,6 @@ Not sure where to source `activate` in your configuration? Here are some general
 
 - [bash][]: `.bash_profile`, `.bashrc`.
 - [zsh][]: `.zshrc`, `.zprofile`.
-
 
 ## Check installation
 
