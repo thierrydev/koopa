@@ -47,7 +47,10 @@ Add these lines to your shell configuration file:
 # https://koopa.acidgenomics.com/
 # shellcheck source=/dev/null
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}"
-. "${XDG_CONFIG_HOME}/koopa/activate"
+if [ -f "${XDG_CONFIG_HOME}/koopa/activate" ]
+then
+    . "${XDG_CONFIG_HOME}/koopa/activate"
+fi
 ```
 
 Not sure where to source `activate` in your configuration? Here are some general recommendations, in order of priority for each shell. These can differ depending on the operating system, so refer to your shell documentation for details.
