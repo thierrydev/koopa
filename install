@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 
-install="https://raw.githubusercontent.com/acidgenomics/koopa/master/install"
-curl -sSL "$install" | bash -s -- "$@"
+## https://unix.stackexchange.com/questions/180383
+## > bash -c "$(wget -O - http://example.com/my-script.sh)"
+
+tmpdir="${TMPDIR:-/tmp}"
+install="${tmpdir}/install-koopa.sh"
+curl -o "$install" "https://raw.githubusercontent.com/acidgenomics/koopa/master/install"
+chmod +x "$install"
+"${install}"
+rm "$install"
