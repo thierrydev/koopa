@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 set -Eeux -o pipefail
 
-## https://unix.stackexchange.com/questions/180383
-## > bash -c "$(wget -O - http://example.com/my-script.sh)"
+# """
+# koopa piped install script.
+# Updated 2020-01-21.
+#
+# See also:
+# - https://unix.stackexchange.com/questions/180383
+# """
 
 tmpdir="${TMPDIR:-/tmp}"
 install="${tmpdir}/install-koopa.sh"
