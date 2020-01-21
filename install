@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -Eeux -o pipefail
 
 ## https://unix.stackexchange.com/questions/180383
 ## > bash -c "$(wget -O - http://example.com/my-script.sh)"
