@@ -56,12 +56,12 @@ Restart the shell. Koopa should now activate automatically at login. You can ver
 
 # Docker images
 
-- [Debian](https://hub.docker.com/repository/docker/acidgenomics/debian) 10, 9
 - [Ubuntu](https://hub.docker.com/repository/docker/acidgenomics/ubuntu) 18.04
-- [Fedora](https://hub.docker.com/repository/docker/acidgenomics/fedora)
+- [Debian](https://hub.docker.com/repository/docker/acidgenomics/debian) 10, 9
 - [CentOS](https://hub.docker.com/repository/docker/acidgenomics/centos) 8, 7
-- [Amazon Linux](https://hub.docker.com/repository/docker/acidgenomics/amzn) 2
-- [openSUSE](https://hub.docker.com/repository/docker/acidgenomics/opensuse) Leap
+- [Fedora](https://hub.docker.com/repository/docker/acidgenomics/fedora)
+- [Amazon Linux](https://hub.docker.com/repository/docker/acidgenomics/amzn)
+- [openSUSE](https://hub.docker.com/repository/docker/acidgenomics/opensuse)
 - [Kali](https://hub.docker.com/repository/docker/acidgenomics/kali)
 - [Arch](https://hub.docker.com/repository/docker/acidgenomics/arch)
 - [Alpine](https://hub.docker.com/repository/docker/acidgenomics/alpine)
