@@ -12,7 +12,7 @@ Source code is available on [GitHub](https://github.com/acidgenomics/koopa).
 - [POSIX][]-compliant shell: [Bash][] or [Zsh][]
 - Linux or macOS
 
-Dependencies for executable scripts in `bin/`:
+Dependencies for executable scripts:
 
 - [Bash][] >= 4
 - [Python][] >= 3.8
