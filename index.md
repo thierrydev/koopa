@@ -12,24 +12,10 @@ Source code is available on [GitHub](https://github.com/acidgenomics/koopa).
 - [POSIX][]-compliant shell: [Bash][] or [Zsh][]
 - Linux or macOS
 
-Tested on:
-
-- macOS Catalina, Mojave
-- Debian 10, 9, 8
-- Ubuntu 18.04, 16.04, 14.04
-- Fedora 31
-- RHEL/CentOS 8, 7, 6
-- Amazon Linux 2
-- openSUSE Leap
-- Raspbian Buster
-- Kali
-- Arch
-- Alpine
-
 Dependencies for executable scripts in `bin/`:
 
 - [Bash][] >= 4
-- [Python][] >= 3
+- [Python][] >= 3.8
 - [R][] >= 3.6
 
 # Installation
@@ -67,6 +53,18 @@ Not sure where to source `activate` in your configuration? Here are some general
 ## Check installation
 
 Restart the shell. Koopa should now activate automatically at login. You can verify this with `command -v koopa`. Next, check your environment dependencies with `koopa check`. To obtain information about the working environment, run `koopa info`.
+
+# Docker images
+
+- [Debian](https://hub.docker.com/repository/docker/acidgenomics/debian) 10, 9
+- [Ubuntu](https://hub.docker.com/repository/docker/acidgenomics/ubuntu) 18.04
+- [Fedora](https://hub.docker.com/repository/docker/acidgenomics/fedora)
+- [CentOS](https://hub.docker.com/repository/docker/acidgenomics/centos) 8, 7
+- [Amazon Linux](https://hub.docker.com/repository/docker/acidgenomics/amzn) 2
+- [openSUSE[(https://hub.docker.com/repository/docker/acidgenomics/opensuse) Leap
+- [Kali](https://hub.docker.com/repository/docker/acidgenomics/kali)
+- [Arch](https://hub.docker.com/repository/docker/acidgenomics/arch)
+- [Alpine](https://hub.docker.com/repository/docker/acidgenomics/alpine)
 
 [aspera connect]: https://downloads.asperasoft.com/connect2/
 [bash]: https://www.gnu.org/software/bash/  "Bourne Again SHell"
