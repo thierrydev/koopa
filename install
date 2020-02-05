@@ -11,7 +11,7 @@ set -Eeu -o pipefail
 # - https://unix.stackexchange.com/questions/180383
 # """
 
-install_script="$(mktmp)"
+install_script="$(mktemp)"
 curl -o "$install_script" "https://raw.githubusercontent.com/acidgenomics/koopa/master/install"
 chmod +x "$install_script"
 "${install_script}" "$@"
