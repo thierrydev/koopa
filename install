@@ -3,15 +3,15 @@ set -Eeu -o pipefail
 
 # """
 # koopa piped install script.
-# Updated 2020-01-21.
+# Updated 2020-02-05.
+#
+# Downloads the installer script to a tempfile and executes.
 #
 # See also:
 # - https://unix.stackexchange.com/questions/180383
 # """
 
-tmpdir="${TMPDIR:-/tmp}"
-install="${tmpdir}/install-koopa.sh"
-curl -o "$install" "https://raw.githubusercontent.com/acidgenomics/koopa/master/install"
-chmod +x "$install"
-"${install}" "$@"
-rm "$install"
+install_script="$(mktmp)"
+curl -o "$install_script" "https://raw.githubusercontent.com/acidgenomics/koopa/master/install"
+chmod +x "$install_script"
+"${install_script}" "$@"
