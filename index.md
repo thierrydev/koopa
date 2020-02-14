@@ -56,15 +56,24 @@ Restart the shell. Koopa should now activate automatically at login. You can ver
 
 # Docker images
 
-- [Ubuntu](https://hub.docker.com/repository/docker/acidgenomics/ubuntu)
+## Recommended
+
+These images contain koopa along with other useful bioinformatics software.
+
 - [Debian](https://hub.docker.com/repository/docker/acidgenomics/debian)
-- [CentOS](https://hub.docker.com/repository/docker/acidgenomics/centos)
+- [Ubuntu](https://hub.docker.com/repository/docker/acidgenomics/ubuntu)
 - [Fedora](https://hub.docker.com/repository/docker/acidgenomics/fedora)
-- [Amazon Linux](https://hub.docker.com/repository/docker/acidgenomics/amzn)
-- [openSUSE](https://hub.docker.com/repository/docker/acidgenomics/opensuse)
-- [Kali](https://hub.docker.com/repository/docker/acidgenomics/kali)
-- [Arch](https://hub.docker.com/repository/docker/acidgenomics/arch)
+- [CentOS](https://hub.docker.com/repository/docker/acidgenomics/centos)
+
+## Lightweight
+
+These minimal images only contain koopa installed on top of the base Docker image.
+
 - [Alpine](https://hub.docker.com/repository/docker/acidgenomics/alpine)
+- [Arch](https://hub.docker.com/repository/docker/acidgenomics/arch)
+- [Amazon Linux](https://hub.docker.com/repository/docker/acidgenomics/amzn)
+- [Kali](https://hub.docker.com/repository/docker/acidgenomics/kali)
+- [openSUSE](https://hub.docker.com/repository/docker/acidgenomics/opensuse)
 
 [aspera connect]: https://downloads.asperasoft.com/connect2/
 [bash]: https://www.gnu.org/software/bash/  "Bourne Again SHell"
