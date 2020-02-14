@@ -67,7 +67,7 @@ These images contain koopa along with other useful bioinformatics software.
 
 ## Lightweight
 
-These minimal images only contain koopa installed on top of the base Docker image.
+These images only contain koopa installed on top of the base Docker image.
 
 - [Alpine](https://hub.docker.com/repository/docker/acidgenomics/alpine)
 - [Arch](https://hub.docker.com/repository/docker/acidgenomics/arch)
