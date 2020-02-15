@@ -8,7 +8,8 @@ set -Eeu -o pipefail
 # This downloads a copy of the latest stable release into a temporary directory.
 # """
 
-release="latest"
+# switch to "latest" once bugs are fixed.
+release="master"
 
 if [[ "$#" -gt 0 ]]
 then
@@ -36,23 +37,26 @@ then
     fi
 fi
 
-# Note that use of 'api.github.com' here returns JSON instead of HTML.
-url="https://api.github.com/repos/acidgenomics/koopa/releases/${release}"
-json="$(curl -s "$url")"
-
-tarball_url="$( \
-    echo "$json" \
-        | grep '"tarball_url":' \
-        | cut -d '"' -f 4 \
-)"
-
-tag_name="$( \
-    echo "$json" \
-        | grep '"tag_name":' \
-        | cut -d '"' -f 4 \
-)"
-
-echo "Installing koopa ${tag_name}."
+if [[ "$release" == "master" ]]
+then
+    tarball_url="https://github.com/acidgenomics/koopa/tarball/master"
+    echo "Installing koopa (development version from master branch)."
+else
+    # Note that use of 'api.github.com' here returns JSON instead of HTML.
+    json_url="https://api.github.com/repos/acidgenomics/koopa/releases/${release}"
+    json="$(curl -s "$json_url")"
+    tarball_url="$( \
+        echo "$json" \
+            | grep '"tarball_url":' \
+            | cut -d '"' -f 4 \
+    )"
+    tag_name="$( \
+        echo "$json" \
+            | grep '"tag_name":' \
+            | cut -d '"' -f 4 \
+    )"
+    echo "Installing koopa ${tag_name}."
+fi
 
 tmp_dir="$(mktemp -d)"
 
