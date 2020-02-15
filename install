@@ -59,6 +59,7 @@ else
 fi
 
 tmp_dir="$(mktemp -d)"
+echo "tmpdir: '${tmp_dir}'."
 
 (
     cd "$tmp_dir" || exit 1
@@ -66,7 +67,7 @@ tmp_dir="$(mktemp -d)"
     curl --location -o "$file" "$tarball_url"
     tar -xzf "$file"
     cd "acidgenomics-koopa-"* || exit 1
-    ./install "$@"
+    # > ./install "$@"
 )
 
-rm -fr "$tmp_dir"
+# > rm -fr "$tmp_dir"
