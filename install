@@ -67,7 +67,7 @@ echo "tmpdir: '${tmp_dir}'."
     curl --location -o "$file" "$tarball_url"
     tar -xzf "$file"
     cd "acidgenomics-koopa-"* || exit 1
-    # > ./install "$@"
+    ./install "$@"
 )
 
-# > rm -fr "$tmp_dir"
+rm -fr "$tmp_dir"
