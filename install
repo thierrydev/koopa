@@ -39,8 +39,9 @@ fi
 
 if [[ "$release" == "master" ]]
 then
-    tarball_url="https://github.com/acidgenomics/koopa/tarball/master"
-    echo "Installing koopa (development version from master branch)."
+    echo "Installing koopa (master branch)."
+    git_url="https://github.com/acidgenomics/koopa.git"
+    # > tarball_url="https://github.com/acidgenomics/koopa/tarball/master"
 else
     # Note that use of 'api.github.com' here returns JSON instead of HTML.
     json_url="https://api.github.com/repos/acidgenomics/koopa/releases/${release}"
@@ -63,10 +64,16 @@ echo "tmpdir: '${tmp_dir}'."
 
 (
     cd "$tmp_dir" || exit 1
-    file="koopa.tar.gz"
-    curl --location -o "$file" "$tarball_url"
-    tar -xzf "$file"
-    cd "acidgenomics-koopa-"* || exit 1
+    if [[ "$release" == master" ]]
+    then
+        git clone --recursive "$git_url" koopa
+        cd koopa || exit 1
+    else
+        file="koopa.tar.gz"
+        curl --location -o "$file" "$tarball_url"
+        tar -xzf "$file"
+        cd acidgenomics-koopa-* || exit 1
+    fi
     ./install "$@"
 )
 
