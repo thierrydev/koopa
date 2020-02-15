@@ -8,8 +8,7 @@ set -Eeu -o pipefail
 # This downloads a copy of the latest stable release into a temporary directory.
 # """
 
-# switch to "latest" once bugs are fixed.
-release="master"
+release="rolling"
 
 if [[ "$#" -gt 0 ]]
 then
@@ -37,14 +36,19 @@ then
     fi
 fi
 
-if [[ "$release" == "master" ]]
+repo="acidgenomics/koopa"
+
+if [[ "$release" == "rolling" ]]
 then
-    echo "Installing koopa (master branch)."
-    git_url="https://github.com/acidgenomics/koopa.git"
-    # > tarball_url="https://github.com/acidgenomics/koopa/tarball/master"
+    echo "Installing koopa."
+    echo "Using rolling release from master branch."
+    echo "This can be updated using 'koopa update'."
+    git_url="https://github.com/${repo}.git"
+    # Alternatively, here's how to get master branch tarball:
+    # > tarball_url="https://github.com/${repo}/tarball/master"
 else
     # Note that use of 'api.github.com' here returns JSON instead of HTML.
-    json_url="https://api.github.com/repos/acidgenomics/koopa/releases/${release}"
+    json_url="https://api.github.com/repos/${repo}/releases/${release}"
     json="$(curl -s "$json_url")"
     tarball_url="$( \
         echo "$json" \
@@ -57,20 +61,29 @@ else
             | cut -d '"' -f 4 \
     )"
     echo "Installing koopa ${tag_name}."
+    echo "This is a stable release that cannot be updated."
 fi
 
 tmp_dir="$(mktemp -d)"
-echo "tmpdir: '${tmp_dir}'."
+# > echo "tmpdir: '${tmp_dir}'."
 
 (
     cd "$tmp_dir" || exit 1
     if [[ "$release" == "master" ]]
     then
-        git clone --recursive "$git_url" koopa
+        git clone \
+            --quiet \
+            --recursive \
+            "$git_url" \
+            koopa
         cd koopa || exit 1
     else
         file="koopa.tar.gz"
-        curl --location -o "$file" "$tarball_url"
+        curl \
+            --location \
+            --output "$file" \
+            --silent \
+            "$tarball_url"
         tar -xzf "$file"
         cd acidgenomics-koopa-* || exit 1
     fi
