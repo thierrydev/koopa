@@ -69,13 +69,9 @@ tmp_dir="$(mktemp -d)"
 
 (
     cd "$tmp_dir" || exit 1
-    if [[ "$release" == "master" ]]
+    if [[ "$release" == "rolling" ]]
     then
-        git clone \
-            --quiet \
-            --recursive \
-            "$git_url" \
-            koopa
+        git clone --quiet --recursive "$git_url" koopa
         cd koopa || exit 1
     else
         file="koopa.tar.gz"
