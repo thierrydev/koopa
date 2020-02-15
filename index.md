@@ -23,7 +23,7 @@ Dependencies for executable scripts:
 Requirements: bash, curl, git.
 
 ```sh
-sh -c "$(curl -sSL https://koopa.acidgenomics.com/install)"
+bash -c "$(curl -sSL https://koopa.acidgenomics.com/install)"
 ```
 
 The installer will prompt to determine whether you want a shared install for all users, or for the current local user only.
