@@ -73,7 +73,7 @@ Pre-installed software:
 - [Conda]
 - [AWS CLI][]
 - [Azure CLI][]
-- Google Cloud SDK
+- [Google Cloud SDK][]
 
 ## Lightweight
 
