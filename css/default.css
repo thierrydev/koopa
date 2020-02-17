@@ -5,3 +5,19 @@ html#front body>header {
     margin: 0;
     padding: 0;
 }
+
+html#front pre {
+    color: var(--header-color);
+    overflow: hidden;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    html#front img {
+        border-radius: 0.25rem;
+        background: var(--border-color);
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding: 1rem;
+    }
+}
+

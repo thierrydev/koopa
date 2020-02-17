@@ -48,6 +48,15 @@ Not sure where to source `activate` in your configuration? Here are some general
 - [bash][]: `.bashrc`, `.bash_profile`
 - [zsh][]: `.zshrc`
 
+## Non-interactive installation
+
+This is intended primarily for building Docker images.
+
+```sh
+curl -sSL https://koopa.acidgenomics.com/install \
+    | bash -s -- --non-interactive
+```
+
 ## Check installation
 
 Restart the shell. Koopa should now activate automatically at login. You can verify this with `command -v koopa`. Next, check your environment dependencies with `koopa check`. To obtain information about the working environment, run `koopa info`.
@@ -63,7 +72,7 @@ These images contain koopa along with other useful bioinformatics software.
 - [Fedora](https://hub.docker.com/repository/docker/acidgenomics/fedora)
 - [CentOS](https://hub.docker.com/repository/docker/acidgenomics/centos)
 
-Pre-installed software:
+### Pre-installed software
 
 - [R][]
 - [Python][]
@@ -80,7 +89,9 @@ These images only contain koopa installed on top of the base Docker image.
 - [Alpine](https://hub.docker.com/repository/docker/acidgenomics/alpine)
 - [Arch](https://hub.docker.com/repository/docker/acidgenomics/arch)
 - [Amazon Linux](https://hub.docker.com/repository/docker/acidgenomics/amzn)
+- [Biocontainers](https://hub.docker.com/repository/docker/acidgenomics/biocontainers)
 - [Kali](https://hub.docker.com/repository/docker/acidgenomics/kali)
+- [miniconda3](https://hub.docker.com/repository/docker/acidgenomics/miniconda3)
 - [openSUSE](https://hub.docker.com/repository/docker/acidgenomics/opensuse)
 
 [aspera connect]: https://downloads.asperasoft.com/connect2/
