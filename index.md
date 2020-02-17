@@ -20,8 +20,6 @@ Dependencies for executable scripts:
 
 # Installation
 
-Requirements: bash, curl, git.
-
 ```sh
 bash -c "$(curl -sSL https://koopa.acidgenomics.com/install)"
 ```
