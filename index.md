@@ -20,13 +20,24 @@ Dependencies for executable scripts:
 
 # Installation
 
+## Interactive
+
+The installer will prompt to determine whether you want a shared install for all users, or for the current local user only. It will also ask about dot file configuration and whether your shell profile configuration file should be modified.
+
 ```sh
 bash -c "$(curl -sSL https://koopa.acidgenomics.com/install)"
 ```
 
-The installer will prompt to determine whether you want a shared install for all users, or for the current local user only.
+## Non-interactive
 
-## Update shell configuration (local user only)
+This is intended primarily for building [Docker][] images.
+
+```sh
+curl -sSL https://koopa.acidgenomics.com/install \
+    | bash -s -- --non-interactive
+```
+
+## Update shell configuration
 
 Note that this step is not required for a shared installation on Linux, which writes a configuration file into `/etc/profile.d` instead.
 
@@ -47,15 +58,6 @@ Not sure where to source `activate` in your configuration? Here are some general
 
 - [bash][]: `.bashrc`, `.bash_profile`
 - [zsh][]: `.zshrc`
-
-## Non-interactive installation
-
-This is intended primarily for building Docker images.
-
-```sh
-curl -sSL https://koopa.acidgenomics.com/install \
-    | bash -s -- --non-interactive
-```
 
 ## Check installation
 
@@ -101,6 +103,7 @@ These images only contain koopa installed on top of the base Docker image.
 [bcbio]: https://bcbio-nextgen.readthedocs.io/
 [conda]: https://conda.io/
 [dash]: https://wiki.archlinux.org/index.php/Dash  "Debian Almquist SHell"
+[docker]: https://www.docker.com/
 [dotfiles]: https://github.com/mjsteinbaugh/dotfiles/
 [fish]: https://fishshell.com/  "Friendly Interactive SHell"
 [git]: https://git-scm.com/
