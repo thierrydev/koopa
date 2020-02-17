@@ -65,6 +65,16 @@ These images contain koopa along with other useful bioinformatics software.
 - [Fedora](https://hub.docker.com/repository/docker/acidgenomics/fedora)
 - [CentOS](https://hub.docker.com/repository/docker/acidgenomics/centos)
 
+Pre-installed software:
+
+- [R][]
+- [Python][]
+- [Perl][]
+- [Conda]
+- [AWS CLI][]
+- [Azure CLI][]
+- Google Cloud SDK
+
 ## Lightweight
 
 These images only contain koopa installed on top of the base Docker image.
@@ -76,6 +86,8 @@ These images only contain koopa installed on top of the base Docker image.
 - [openSUSE](https://hub.docker.com/repository/docker/acidgenomics/opensuse)
 
 [aspera connect]: https://downloads.asperasoft.com/connect2/
+[aws cli]: https://aws.amazon.com/cli/
+[azure cli]: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 [bash]: https://www.gnu.org/software/bash/  "Bourne Again SHell"
 [bcbio]: https://bcbio-nextgen.readthedocs.io/
 [conda]: https://conda.io/
@@ -83,13 +95,14 @@ These images only contain koopa installed on top of the base Docker image.
 [dotfiles]: https://github.com/mjsteinbaugh/dotfiles/
 [fish]: https://fishshell.com/  "Friendly Interactive SHell"
 [git]: https://git-scm.com/
+[google cloud sdk]: https://cloud.google.com/sdk/
 [koopa]: https://koopa.acidgenomics.com/
 [ksh]: http://www.kornshell.com/  "KornSHell"
+[perl]: https://www.perl.org/
 [pgp]: https://www.openpgp.org/
 [posix]: https://en.wikipedia.org/wiki/POSIX  "Portable Operating System Interface"
 [python]: https://www.python.org/
 [python]: https://www.python.org/
-[r]: https://www.r-project.org/
 [r]: https://www.r-project.org/
 [ssh]: https://en.wikipedia.org/wiki/Secure_Shell
 [tcsh]: https://en.wikipedia.org/wiki/Tcsh  "TENEX C Shell"
