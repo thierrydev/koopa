@@ -15,7 +15,7 @@ Source code is available on [GitHub](https://github.com/acidgenomics/koopa).
 Dependencies for executable scripts:
 
 - [Bash][] >= 4
-- [Python][] >= 3.8
+- [Python][] >= 3
 - [R][] >= 3.6
 
 # Installation
