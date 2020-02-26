@@ -6,7 +6,7 @@ html#front body>header {
     padding: 0;
 }
 
-html#front pre {
+html#front header > pre {
     color: var(--header-color);
     overflow: hidden;
 }
