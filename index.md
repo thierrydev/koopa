@@ -73,7 +73,6 @@ These images contain koopa along with other useful bioinformatics software.
 - [Ubuntu](https://hub.docker.com/repository/docker/acidgenomics/ubuntu)
 - [Fedora](https://hub.docker.com/repository/docker/acidgenomics/fedora)
 - [CentOS](https://hub.docker.com/repository/docker/acidgenomics/centos)
-- [Alpine](https://hub.docker.com/repository/docker/acidgenomics/alpine)
 - [Arch](https://hub.docker.com/repository/docker/acidgenomics/arch)
 - [openSUSE](https://hub.docker.com/repository/docker/acidgenomics/opensuse)
 - [Amazon Linux](https://hub.docker.com/repository/docker/acidgenomics/amzn)
@@ -92,6 +91,7 @@ These images contain koopa along with other useful bioinformatics software.
 
 These images only contain koopa installed on top of the base Docker image.
 
+- [Alpine](https://hub.docker.com/repository/docker/acidgenomics/alpine)
 - [Biocontainers](https://hub.docker.com/repository/docker/acidgenomics/biocontainers)
 - [Kali](https://hub.docker.com/repository/docker/acidgenomics/kali)
 - [miniconda3](https://hub.docker.com/repository/docker/acidgenomics/miniconda3)
