@@ -84,7 +84,7 @@ These images contain koopa along with other useful bioinformatics software.
 - [Azure CLI][]
 - [Google Cloud SDK][]
 
-## Lightweight
+## Minimal
 
 These images only contain koopa installed on top of the base Docker image.
 
