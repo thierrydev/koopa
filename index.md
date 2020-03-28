@@ -10,7 +10,7 @@ Source code is available on [GitHub](https://github.com/acidgenomics/koopa).
 # Requirements
 
 - [POSIX][]-compliant shell: [Bash][], [Zsh][], or [Dash][]
-- Linux or macOS
+- [Linux][] or [macOS][]
 
 Dependencies for executable scripts:
 
@@ -110,6 +110,8 @@ These images only contain koopa installed on top of the base Docker image.
 [google cloud sdk]: https://cloud.google.com/sdk/
 [koopa]: https://koopa.acidgenomics.com/
 [ksh]: http://www.kornshell.com/  "KornSHell"
+[linux]: https://www.linuxfoundation.org/
+[macos]: https://www.apple.com/macos/
 [perl]: https://www.perl.org/
 [pgp]: https://www.openpgp.org/
 [posix]: https://en.wikipedia.org/wiki/POSIX  "Portable Operating System Interface"
