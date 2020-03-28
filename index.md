@@ -9,7 +9,7 @@ Source code is available on [GitHub](https://github.com/acidgenomics/koopa).
 
 # Requirements
 
-- [POSIX][]-compliant shell: [Bash][] or [Zsh][]
+- [POSIX][]-compliant shell: [Bash][], [Zsh][], or [Dash][]
 - Linux or macOS
 
 Dependencies for executable scripts:
@@ -102,7 +102,7 @@ These images only contain koopa installed on top of the base Docker image.
 [bash]: https://www.gnu.org/software/bash/  "Bourne Again SHell"
 [bcbio]: https://bcbio-nextgen.readthedocs.io/
 [conda]: https://conda.io/
-[dash]: https://wiki.archlinux.org/index.php/Dash  "Debian Almquist SHell"
+[dash]: https://git.kernel.org/pub/scm/utils/dash/dash.git  "Debian Almquist SHell"
 [docker]: https://www.docker.com/
 [dotfiles]: https://github.com/mjsteinbaugh/dotfiles/
 [fish]: https://fishshell.com/  "Friendly Interactive SHell"
