@@ -56,9 +56,9 @@ fi
 
 Not sure where to source `activate` in your configuration? Here are some general recommendations, in order of priority for each shell. These can differ depending on the operating system, so refer to your shell documentation for details.
 
-- [bash][]: `.bashrc`, `.bash_profile`
-- [zsh][]: `.zshrc`
-- [dash][]: `.profile`
+- [Bash][]: `.bashrc`, `.bash_profile`
+- [Zsh][]: `.zshrc`
+- [Dash][]: `.profile`
 
 ## Check installation
 
