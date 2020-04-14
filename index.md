@@ -58,6 +58,7 @@ Not sure where to source `activate` in your configuration? Here are some general
 
 - [bash][]: `.bashrc`, `.bash_profile`
 - [zsh][]: `.zshrc`
+- [dash][]: `.profile`
 
 ## Check installation
 
