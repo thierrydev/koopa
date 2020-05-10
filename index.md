@@ -95,7 +95,6 @@ These images only contain koopa installed on top of the base Docker image.
 - [Arch](https://hub.docker.com/repository/docker/acidgenomics/arch)
 - [Amazon Linux](https://hub.docker.com/repository/docker/acidgenomics/amzn)
 - [openSUSE](https://hub.docker.com/repository/docker/acidgenomics/opensuse)
-- [Kali](https://hub.docker.com/repository/docker/acidgenomics/kali)
 
 [aspera connect]: https://downloads.asperasoft.com/connect2/
 [aws cli]: https://aws.amazon.com/cli/
