@@ -25,7 +25,7 @@ Dependencies for executable scripts:
 The installer will prompt to determine whether you want a shared install for all users, or for the current local user only. It will also ask about dot file configuration and whether your shell profile configuration file should be modified.
 
 ```sh
-curl -sSL https://koopa.acidgenomics.com/install | bash
+bash -c "$(curl -sSL https://koopa.acidgenomics.com/install)"
 ```
 
 ## Non-interactive
