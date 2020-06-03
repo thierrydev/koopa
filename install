@@ -82,7 +82,7 @@ tmp_dir="$(mktemp -d)"
         tar -xzf "$file"
         cd acidgenomics-koopa-* || exit 1
     fi
-    ./install "$@"
+    bash -i ./install "$@"
 )
 
 rm -fr "$tmp_dir"
