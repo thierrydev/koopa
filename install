@@ -3,7 +3,7 @@ set -Eeu -o pipefail
 
 # """
 # koopa piped install script.
-# Updated 2020-02-15.
+# Updated 2020-06-03.
 #
 # This downloads a copy of the latest stable release into a temporary directory.
 # """
