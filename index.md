@@ -20,12 +20,23 @@ Dependencies for executable scripts:
 
 # Installation
 
+Ensure that [curl][], [git][], and [sudo][] are installed before proceeding.
+
 ## Interactive
 
-The installer will prompt to determine whether you want a shared install for all users, or for the current local user only. It will also ask about dot file configuration and whether your shell profile configuration file should be modified.
+The install script will prompt to determine whether you want a shared install for all users, or for the current local user only. It will also ask about dot file configuration and whether your shell profile configuration file should be modified.
 
 ```sh
 bash -c "$(curl -sSL https://koopa.acidgenomics.com/install)"
+```
+
+Alternatively, download the install script as a temporary file and then execute.
+
+```sh
+install="$(mktemp)"
+curl -sSL -o "$install" https://koopa.acidgenomics.com/install
+chmod +x "$install"
+"$install"
 ```
 
 ## Non-interactive
@@ -102,6 +113,7 @@ These images only contain koopa installed on top of the base Docker image.
 [bash]: https://www.gnu.org/software/bash/  "Bourne Again SHell"
 [bcbio]: https://bcbio-nextgen.readthedocs.io/
 [conda]: https://conda.io/
+[curl]: https://curl.haxx.se/
 [dash]: https://git.kernel.org/pub/scm/utils/dash/dash.git  "Debian Almquist SHell"
 [docker]: https://www.docker.com/
 [dotfiles]: https://github.com/mjsteinbaugh/dotfiles/
@@ -119,5 +131,6 @@ These images only contain koopa installed on top of the base Docker image.
 [python]: https://www.python.org/
 [r]: https://www.r-project.org/
 [ssh]: https://en.wikipedia.org/wiki/Secure_Shell
+[sudo]: https://www.sudo.ws/
 [tcsh]: https://en.wikipedia.org/wiki/Tcsh  "TENEX C Shell"
 [zsh]: https://www.zsh.org/  "Z SHell"
