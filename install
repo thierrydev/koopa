@@ -20,7 +20,7 @@ _koopa_print() {
 }
 
 # Check dependencies before attempting to install.
-deps=(curl find git grep mktemp sudo tar)
+deps=(curl find git grep mktemp tar)
 
 for dep in "${deps[@]}"
 do
