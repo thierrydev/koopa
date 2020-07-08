@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeu -o pipefail
 
-koopa::install() {
+install() {
     # """
     # koopa installer.
     # Updated 2020-07-08.
@@ -44,7 +44,7 @@ koopa::install() {
     do
         if ! is_installed "$dep"
         then
-            >&2 koopa::print \
+            >&2 print \
                 "ERROR: \"${dep}\" is not installed." \
                 "Required dependencies: \"${deps[*]}\"."
             return 1
@@ -55,7 +55,7 @@ koopa::install() {
         git_url="https://github.com/${repo}.git"
         # Alternatively, here's how to get master branch tarball:
         # > tarball_url="https://github.com/${repo}/tarball/master"
-        koopa::print \
+        print \
             'Installing koopa.' \
             "Git URL: \"${git_url}\"" \
             'Using rolling release from master branch.' \
@@ -73,7 +73,7 @@ koopa::install() {
                 | grep '"tag_name":' \
                 | cut -d '"' -f 4 \
         )"
-        koopa::print \
+        print \
             "Installing koopa (${tag_name})." \
             'This is a stable release that cannot be updated.'
     fi
@@ -97,7 +97,7 @@ koopa::install() {
     return 0
 }
 
-koopa::is_installed() {
+is_installed() {
     local arg
     for arg in "$@"
     do
@@ -106,7 +106,7 @@ koopa::is_installed() {
     return 0
 }
 
-koopa::print() {
+print() {
     local arg
     for arg in "$@"
     do
@@ -115,4 +115,4 @@ koopa::print() {
     return 0
 }
 
-koopa::install "$@"
+install "$@"
