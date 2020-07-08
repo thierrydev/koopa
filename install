@@ -1,41 +1,14 @@
 #!/usr/bin/env bash
 set -Eeu -o pipefail
 
-# """
-# koopa piped install script.
-# Updated 2020-06-29.
-#
-# This downloads a copy of the latest stable release into a temporary directory.
-# """
-
-# shell/posix/functions/boolean-logical.sh
-_koopa_is_installed() {
-    command -v "$1" >/dev/null
-}
-
-# shell/posix/functions/print.sh
-_koopa_print() {
-    printf '%b\n' "${1:-}"
-    return 0
-}
-
-# Check dependencies before attempting to install.
-deps=(curl find git grep mktemp tar)
-
-for dep in "${deps[@]}"
-do
-    if ! _koopa_is_installed "$dep"
-    then
-        >&2 printf "ERROR: '%s' is not installed.\n" "$dep"
-        >&2 printf "Required dependencies: %s\n" "${deps[*]}"
-        exit 1
-    fi
-done
-
-release="rolling"
-
-if [[ "$#" -gt 0 ]]
-then
+koopa::install() {
+    # """
+    # koopa installer.
+    # Updated 2020-07-08.
+    # """
+    local dep deps git_url json json_url pos release repo tag_name tarball_url
+    repo='acidgenomics/koopa'
+    release='rolling'
     pos=()
     while (("$#"))
     do
@@ -54,59 +27,92 @@ then
             ;;
         esac
     done
-    if [[ "${#pos[@]}" -gt 0 ]]
+    [[ "${#pos[@]}" -gt 0 ]] && set -- "${pos[@]}"
+    deps=(
+        'cp'
+        'curl'
+        'find'
+        'git'
+        'grep'
+        'mkdir'
+        'mktemp'
+        'mv'
+        'rm'
+        'tar'
+    )
+    for dep in "${deps[@]}"
+    do
+        if ! is_installed "$dep"
+        then
+            >&2 koopa::print \
+                "ERROR: \"${dep}\" is not installed." \
+                "Required dependencies: \"${deps[*]}\"."
+            return 1
+        fi
+    done
+    if [[ "$release" == 'rolling' ]]
     then
-        set -- "${pos[@]}"
-    fi
-fi
-
-repo="acidgenomics/koopa"
-
-if [[ "$release" == "rolling" ]]
-then
-    _koopa_print "Installing koopa."
-    _koopa_print "Using rolling release from master branch."
-    _koopa_print "This can be updated using 'koopa update'."
-    git_url="https://github.com/${repo}.git"
-    # Alternatively, here's how to get master branch tarball:
-    # > tarball_url="https://github.com/${repo}/tarball/master"
-else
-    # Note that use of 'api.github.com' here returns JSON instead of HTML.
-    json_url="https://api.github.com/repos/${repo}/releases/${release}"
-    json="$(curl -s "$json_url")"
-    tarball_url="$( \
-        _koopa_print "$json" \
-            | grep '"tarball_url":' \
-            | cut -d '"' -f 4 \
-    )"
-    tag_name="$( \
-        _koopa_print "$json" \
-            | grep '"tag_name":' \
-            | cut -d '"' -f 4 \
-    )"
-    _koopa_print "Installing koopa ${tag_name}."
-    _koopa_print "This is a stable release that cannot be updated."
-fi
-
-tmp_dir="$(mktemp -d)"
-
-(
-    cd "$tmp_dir" || exit 1
-    if [[ "$release" == "rolling" ]]
-    then
-        git clone --recursive "$git_url" koopa
-        cd koopa || exit 1
+        git_url="https://github.com/${repo}.git"
+        # Alternatively, here's how to get master branch tarball:
+        # > tarball_url="https://github.com/${repo}/tarball/master"
+        koopa::print \
+            'Installing koopa.' \
+            "Git URL: \"${git_url}\"" \
+            'Using rolling release from master branch.' \
+            'This can be updated using "koopa update".'
     else
-        file="koopa.tar.gz"
-        curl \
-            --location \
-            --output "$file" \
-            "$tarball_url"
-        tar -xzf "$file"
-        cd acidgenomics-koopa-* || exit 1
+        json_url="https://api.github.com/repos/${repo}/releases/${release}"
+        json="$(curl -s "$json_url")"
+        tarball_url="$( \
+            print "$json" \
+                | grep '"tarball_url":' \
+                | cut -d '"' -f 4 \
+        )"
+        tag_name="$( \
+            print "$json" \
+                | grep '"tag_name":' \
+                | cut -d '"' -f 4 \
+        )"
+        koopa::print \
+            "Installing koopa (${tag_name})." \
+            'This is a stable release that cannot be updated.'
     fi
-    chmod +x install
-    ./install "$@"
-)
+    tmp_dir="$(mktemp -d)"
+    (
+        cd "$tmp_dir" || exit 1
+        if [[ "$release" == 'rolling' ]]
+        then
+            git clone --recursive "$git_url" 'koopa'
+            cd koopa || exit 1
+        else
+            file='koopa.tar.gz'
+            curl --location --output "$file" "$tarball_url"
+            tar -xzf "$file"
+            cd 'acidgenomics-koopa-'* || exit 1
+        fi
+        chmod +x 'install'
+        './install' "$@"
+    )
+    rm -fr "$tmp_dir"
+    return 0
+}
 
-rm -fr "$tmp_dir"
+koopa::is_installed() {
+    local arg
+    for arg in "$@"
+    do
+        command -v "$arg" >/dev/null || return 1
+    done
+    return 0
+}
+
+koopa::print() {
+    local arg
+    for arg in "$@"
+    do
+        printf '%b\n' "$arg"
+    done
+    return 0
+}
+
+koopa::install "$@"
